@@ -1,0 +1,12 @@
+KMS TAX REPORT FOR 2026
+========================================
+Automated mileage log for Dutch tax compliance
+Format: [Date Time] TYPE | City | KM | Purpose
+========================================
+
+[2026-01-15 08:30] DEPARTURE | City: Amsterdam | KM: 45230 | Purpose: Business
+[2026-01-15 09:15] ARRIVAL | City: Rotterdam | KM: 45298 | Purpose: Business
+[2026-01-15 17:00] DEPARTURE | City: Rotterdam | KM: 45298 | Purpose: Business
+[2026-01-15 18:10] ARRIVAL | City: Amsterdam | KM: 45366 | Purpose: Business
+[2026-01-16 07:45] DEPARTURE | City: Amsterdam | KM: 45366 | Purpose: Private
+[2026-01-16 08:30] ARRIVAL | City: Utrecht | KM: 45412 | Purpose: Private
