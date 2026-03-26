@@ -11,7 +11,7 @@ on taxable income.
 
 ## The Solution
 
-A Python tool that generates three iOS Shortcuts:
+Three iOS Shortcuts that work together:
 
 | Shortcut | Purpose |
 |---|---|
@@ -21,29 +21,47 @@ A Python tool that generates three iOS Shortcuts:
 
 On iOS 17+, Bluetooth automations run silently — no taps needed.
 
-## Quick Start
+## Install the Shortcuts
 
-```bash
-python3 generate.py
-```
+The pre-built shortcut files are in the [`output/`](output/) folder:
 
-Then AirDrop the three `.shortcut` files from `output/` to your iPhone.
+1. **On your iPhone**, open this repo and tap each `.shortcut` file to install:
+   - [`Travel Tracker Setup.shortcut`](output/Travel%20Tracker%20Setup.shortcut)
+   - [`Trip Start.shortcut`](output/Trip%20Start.shortcut)
+   - [`Trip End.shortcut`](output/Trip%20End.shortcut)
+2. **Run "Travel Tracker Setup"** first to configure your preferences
+3. **Set up Bluetooth automations** — see [docs/SETUP_GUIDE.md](docs/SETUP_GUIDE.md) for step-by-step instructions
 
-See [docs/SETUP_GUIDE.md](docs/SETUP_GUIDE.md) for detailed instructions.
+Alternatively, you can AirDrop, email, or share the files from `output/` to your iPhone via any method — tapping a `.shortcut` file on iOS will prompt you to install it.
 
 ## Requirements
 
-- Python 3.10+ (no external dependencies)
 - iPhone with iOS 17+ (iOS 16 works but requires manual tap per trip)
+
+## Alternative: Generate Shortcuts Yourself
+
+If you want to customize the shortcuts or regenerate them, you can run the Python generator:
+
+```bash
+# Requires Python 3.10+ (no external dependencies)
+python3 generate.py
+```
+
+This rebuilds the three `.shortcut` files in `output/` from source. Edit `src/shortcut_generator/shortcuts.py` to customize the shortcut behavior.
+
+See [docs/SETUP_GUIDE.md](docs/SETUP_GUIDE.md) for detailed setup instructions.
 
 ## Project Structure
 
 ```
+output/                     # Pre-built .shortcut files (ready to install)
 src/shortcut_generator/
-├── variables.py    # Variable reference builders
-├── actions.py      # Shortcut action builders
-├── shortcuts.py    # High-level shortcut composers
-└── generator.py    # CLI entry, writes .shortcut files
+  variables.py              # Variable reference builders
+  actions.py                # Shortcut action builders
+  shortcuts.py              # High-level shortcut composers
+  generator.py              # CLI entry, writes .shortcut files
+templates/                  # Tax report sample
+docs/SETUP_GUIDE.md         # End-user setup instructions
 ```
 
 ## Running Tests
