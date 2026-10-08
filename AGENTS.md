@@ -27,6 +27,8 @@ python3 -m pytest tests/ -v     # 36 tests
 python3 generate.py             # reference .shortcut files into output/
 ```
 
+`output/` is not gitignored; delete it after looking, don't commit it.
+
 ## Hard rules
 
 - The guide and the generator must describe the same three shortcuts; a
